@@ -1,0 +1,48 @@
+# ===================== 通用 Python 忽略规则 =====================
+# Python 字节码/缓存
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+
+# IPython 缓存
+.ipynb_checkpoints/
+
+# 构建/打包文件
+build/
+dist/
+*.egg-info/
+*.egg
+
+# ===================== 项目专属忽略规则（AoM 核心） =====================
+# 1. 日志/TF事件文件（全量忽略）
+*.log
+logs/
+*.tfevents.*
+ADAR_train15/          # 整个目录忽略（含所有子目录的日志/模型）
+ADAR_15_aesc/     # 整个目录忽略（含所有子目录的日志/模型）
+
+# 2. 模型权重/检查点（彻底忽略所有超大文件）
+*.pt
+*.pth
+*.bin
+*.ckpt
+checkpoint/
+AoM-ckpt/
+TRC_ckpt/
+ADAR_train15/
+train15/
+
+.git_backup
+
+.git.bfg-report
+# 5. 临时/系统文件
+*.bak
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
